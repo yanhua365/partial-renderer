@@ -51,6 +51,7 @@ public String detail(@PathVariable("id") String id,ModelMap modelMap){
 gradle jettyRun
 
 ```
+
 即可。
 
 ## 问题
