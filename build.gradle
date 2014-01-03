@@ -1,0 +1,23 @@
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+repositories {
+    mavenCentral()
+    maven { url "http://repo.spring.io/libs-milestone" }
+}
+
+dependencies {
+    compile 'org.springframework:spring-core:3.2.3.RELEASE'
+    compile 'org.springframework:spring-webmvc:3.2.3.RELEASE'
+    compile 'org.springframework:spring-context-support:3.2.3.RELEASE'
+    compile 'org.freemarker:freemarker:2.3.20'
+    providedCompile  'javax.servlet:servlet-api:2.5'
+}
+
+httpPort = 8080
+stopPort = 9451
+stopKey = 'foo'
+
+tasks.withType(Compile) {
+    options.encoding = "UTF-8"
+}
