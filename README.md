@@ -55,4 +55,5 @@ gradle jettyRun
 
 ## 问题
 
-- 为什么用IDEA来提交到GitHub上有时中文乱码，有时没有？
+- 为什么用IDEA来提交到GitHub上有时中文乱码，有时没有？是英文第一次git clone是用的msysgit吗？
+
