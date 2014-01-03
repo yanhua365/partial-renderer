@@ -16,6 +16,8 @@
 
 </#macro>
 
+
+<#-- 主体内容-->
 <@main_layout title="局部渲染示例">
 
 <div class="container">
@@ -31,7 +33,10 @@
         </div>
 
         <div class="span6" id="book-detail">
-            <@render "_detail.ftl", {'book':books[0]}/>
+            <@render "_detail.ftl" books[0]/>
+            <#--
+            <@render src="_detail.ftl" object=books[0]/>
+            -->
         </div>
     </div>
 </div> <!-- /container -->

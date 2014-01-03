@@ -1,11 +1,14 @@
+<#--
+ @param object : Book对象
+ -->
 <div>
 
-<h2>${_prctx_.book.name}</h2>
+<h2>${object.name}</h2>
 
-<img src="${_prctx_.book.picUrl}">
+<img src="${object.picUrl}">
 
 <p>
-    ${_prctx_.book.desc}
+    ${object.desc}
 </p>
 
 </div>

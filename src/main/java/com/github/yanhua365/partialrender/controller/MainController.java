@@ -13,6 +13,8 @@ import java.util.*;
 @Controller
 public class MainController {
 
+    public static final String PARTIAL_RENDER_ATTR_OBJECT = "object";
+
     @RequestMapping("/")
     public String main(ModelMap modelMap){
         modelMap.addAttribute("books", Book.getBooks());
@@ -21,11 +23,7 @@ public class MainController {
 
     @RequestMapping("/detail/{id}")
     public String detail(@PathVariable("id") String id,ModelMap modelMap){
-        //变量不要直接加到modelMap里，先加到一个prCtx中，多了一层（丑陋的）包装，
-        //是因为reeMarker的local指令不能用一个变量作为要定义的变量的名称。
-        PartialRenderContext<String,Object> prCtx = new PartialRenderContext<String, Object>();
-        prCtx.put("book", Book.getBook(id));
-        modelMap.addAttribute(PartialRenderContext.KEY, prCtx);
+        modelMap.addAttribute(PARTIAL_RENDER_ATTR_OBJECT, Book.getBook(id));
         return "_detail";
     }
 
@@ -111,10 +109,4 @@ public class MainController {
        private String picUrl;
        private String desc;
    }
-
-
-   public static class PartialRenderContext<K, V> extends HashMap<String,Object>{
-        public static final String KEY = "_prctx_";
-
-    }
 }
