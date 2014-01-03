@@ -52,3 +52,7 @@ gradle jettyRun
 
 ```
 即可。
+
+## 问题
+
+- 为什么用IDEA来提交到GitHub上有时中文乱码，有时没有？
